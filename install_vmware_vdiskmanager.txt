@@ -1,0 +1,8 @@
+tar xvf VMware-vix-disklib-6.0.2-3566099.x86_64.tar.gz 
+cd vmware-vix-disklib-distrib/bin64
+sudo ln -s $(pwd)/vmware-vdiskmanager /usr/bin/vmware-vdiskmanager 
+ls -l /usr/bin/vmware-vdiskmanager
+cd ../lib64/
+sudo ln -s $(pwd) /usr/lib/vmware
+sudo bash -c "echo $(pwd) > /etc/ld.so.conf.d/vmware-vix-disklib.conf"
+sudo ldconfig
